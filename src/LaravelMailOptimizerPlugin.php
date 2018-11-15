@@ -3,13 +3,20 @@
 namespace Fridzema\LaravelMailOptimizer;
 
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
+use voku\helper\HtmlMin;
 
-class LaravelMailCssInlinerPlugin implements \Swift_Events_SendListener
+class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
 {
     /**
      * @var CssToInlineStyles
      */
     private $converter;
+
+    /**
+     * @var CssToInlineStyles
+     */
+    private $minifier;
+
     /**
      * @var string
      */
@@ -20,6 +27,7 @@ class LaravelMailCssInlinerPlugin implements \Swift_Events_SendListener
     public function __construct(array $options)
     {
         $this->converter = new CssToInlineStyles();
+        $this->minifier =  new HtmlMin();
         $this->loadOptions($options);
     }
     /**
@@ -33,12 +41,12 @@ class LaravelMailCssInlinerPlugin implements \Swift_Events_SendListener
             || ($message->getContentType() === 'multipart/mixed' && $message->getBody())
         ) {
             $body = $this->loadCssFilesFromLinks($message->getBody());
-            $message->setBody($this->converter->convert($body, $this->css));
+            $message->setBody($this->minifier->minify($this->converter->convert($body, $this->css)));
         }
         foreach ($message->getChildren() as $part) {
             if (strpos($part->getContentType(), 'text/html') === 0) {
                 $body = $this->loadCssFilesFromLinks($part->getBody());
-                $part->setBody($this->converter->convert($body, $this->css));
+                $part->setBody($this->minifier->minify($this->converter->convert($body, $this->css)));
             }
         }
     }

@@ -29,12 +29,12 @@ class LaravelMailOptimizerServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/mail-optimizer.php', 'mail-optimizer');
 
         // Register the service the package provides.
-        $this->app->singleton(LaravelMailCssInlinerPlugin::class, function ($app) {
-            return new LaravelMailCssInlinerPlugin($app['config']->get('mail-optimizer'));
+        $this->app->singleton(LaravelMailOptimizerPlugin::class, function ($app) {
+            return new LaravelMailOptimizerPlugin($app['config']->get('mail-optimizer'));
         });
 
         $this->app->extend('swift.mailer', function (Swift_Mailer $swiftMailer, $app) {
-            $inlinerPlugin = $app->make(LaravelMailCssInlinerPlugin::class);
+            $inlinerPlugin = $app->make(LaravelMailOptimizerPlugin::class);
             // $minifierPlugin = $app->make(LaravelMailHtmlMinifierPlugin::class);
 
             $swiftMailer->registerPlugin($inlinerPlugin);

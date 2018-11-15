@@ -13,7 +13,8 @@
     "keywords": ["Laravel", "LaravelMailOptimizer"],
     "require": {
         "illuminate/support": "~5",
-        "tijsverkoyen/css-to-inline-styles": "~2.0"
+        "tijsverkoyen/css-to-inline-styles": "~2.0",
+        "voku/html-min": "^3.0"
     },
     "autoload": {
         "psr-4": {
