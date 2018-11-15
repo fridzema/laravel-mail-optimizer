@@ -2,8 +2,8 @@
 
 namespace Fridzema\LaravelMailOptimizer;
 
-use Illuminate\Support\ServiceProvider;
 use Swift_Mailer;
+use Illuminate\Support\ServiceProvider;
 
 class LaravelMailOptimizerServiceProvider extends ServiceProvider
 {
