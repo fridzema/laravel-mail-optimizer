@@ -2,8 +2,8 @@
 
 namespace Fridzema\LaravelMailOptimizer;
 
-use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 use voku\helper\HtmlMin;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
 {
@@ -21,15 +21,17 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
      * @var string
      */
     protected $css;
+
     /**
      * @param array $options options defined in the configuration file.
      */
     public function __construct(array $options)
     {
         $this->converter = new CssToInlineStyles();
-        $this->minifier =  new HtmlMin();
+        $this->minifier = new HtmlMin();
         $this->loadOptions($options);
     }
+
     /**
      * @param \Swift_Events_SendEvent $evt
      */
@@ -50,8 +52,9 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
             }
         }
     }
+
     /**
-     * Do nothing
+     * Do nothing.
      *
      * @param \Swift_Events_SendEvent $evt
      */
@@ -59,8 +62,9 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
     {
         // Do Nothing
     }
+
     /**
-     * Load the options
+     * Load the options.
      * @param  array $options Options array
      */
     public function loadOptions($options)
@@ -72,8 +76,9 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
             }
         }
     }
+
     /**
-     * Find CSS stylesheet links and load them
+     * Find CSS stylesheet links and load them.
      *
      * Loads the body of the message and passes
      * any link stylesheets to $this->css
@@ -94,7 +99,7 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
         $link_tags = $dom->getElementsByTagName('link');
         if ($link_tags->length > 0) {
             do {
-                if ($link_tags->item(0)->getAttribute('rel') == "stylesheet") {
+                if ($link_tags->item(0)->getAttribute('rel') == 'stylesheet') {
                     $options['css-files'][] = $link_tags->item(0)->getAttribute('href');
                     // remove the link node
                     $link_tags->item(0)->parentNode->removeChild($link_tags->item(0));
@@ -104,8 +109,10 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
                 // reload the options
                 $this->loadOptions($options);
             }
+
             return $dom->saveHTML();
         }
+
         return $message;
     }
 }
