@@ -6,6 +6,13 @@
 
 Inlines css and minifies html in Laravel mails.
 
+## Roadmap
+Load css from url/cdn
+Disable / Enable optimizations
+Check some html mail standards
+Cache mail views
+Debug function
+
 ## Installation
 
 Via Composer
@@ -17,7 +24,7 @@ $ composer require fridzema/laravel-mail-optimizer
 ## Usage
 Publish config
 ```
-php artisan vendor:publish --provider='Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider'
+php artisan vendor:publish --provider='Fridzema\LaravelMailOptimizer\LaravelMailOptimizerServiceProvider'
 ```
 
 
