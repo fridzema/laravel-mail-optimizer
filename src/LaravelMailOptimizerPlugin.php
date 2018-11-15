@@ -32,6 +32,11 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
         $this->loadOptions($options);
     }
 
+    public function applyOptimizers(string $html, string $css)
+    {
+      return (string) $this->minifier->minify($this->converter->convert($body, $this->css))
+    }
+
     /**
      * @param \Swift_Events_SendEvent $evt
      */
@@ -43,12 +48,12 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
             || ($message->getContentType() === 'multipart/mixed' && $message->getBody())
         ) {
             $body = $this->loadCssFilesFromLinks($message->getBody());
-            $message->setBody($this->minifier->minify($this->converter->convert($body, $this->css)));
+            $message->setBody($this->applyOptimizers($body, $this->css));
         }
         foreach ($message->getChildren() as $part) {
             if (strpos($part->getContentType(), 'text/html') === 0) {
                 $body = $this->loadCssFilesFromLinks($part->getBody());
-                $part->setBody($this->minifier->minify($this->converter->convert($body, $this->css)));
+                $part->setBody($this->applyOptimizers($body, $this->css));
             }
         }
     }
