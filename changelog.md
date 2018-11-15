@@ -6,3 +6,5 @@ All notable changes to `LaravelMailOptimizer` will be documented in this file.
 
 ### Added
 - Everything
+
+
