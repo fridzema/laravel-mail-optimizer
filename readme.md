@@ -1,8 +1,8 @@
 # LaravelMailOptimizer
-
-[![Latest Version on Packagist][ico-version]][https://packagist.org/packages/fridzema/laravel-mail-optimizer]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![StyleCI][ico-styleci]][https://github.styleci.io/repos/157713605]
+[![GitHub issues](https://img.shields.io/github/issues/fridzema/laravel-mail-optimizer.svg)](https://github.com/fridzema/laravel-mail-optimizer/issues)
+[![StyleCI](https://github.styleci.io/repos/157713605/shield?branch=master)](https://github.styleci.io/repos/157713605)
+[![Latest Stable Version](https://poser.pugx.org/fridzema/laravel-mail-optimizer/v/stable)](https://packagist.org/packages/fridzema/laravel-mail-optimizer)
+[![License](https://poser.pugx.org/fridzema/laravel-mail-optimizer/license)](https://packagist.org/packages/fridzema/laravel-mail-optimizer)
 
 Laravel mail optimizer injects your css to emails, after this it will be minified.
 

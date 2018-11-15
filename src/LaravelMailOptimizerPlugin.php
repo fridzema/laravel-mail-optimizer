@@ -2,8 +2,8 @@
 
 namespace Fridzema\LaravelMailOptimizer;
 
-use voku\helper\HtmlMin;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
+use voku\helper\HtmlMin;
 
 class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
 {
@@ -13,7 +13,7 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
     private $converter;
 
     /**
-     * @var CssToInlineStyles
+     * @var HtmlMin
      */
     private $minifier;
 

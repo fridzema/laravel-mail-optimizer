@@ -21,19 +21,11 @@
             "Fridzema\\LaravelMailOptimizer\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Fridzema\\LaravelMailOptimizer\\Tests\\": "tests"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
                 "Fridzema\\LaravelMailOptimizer\\LaravelMailOptimizerServiceProvider"
-            ],
-            "aliases": {
-                "LaravelMailOptimizer": "Fridzema\\LaravelMailOptimizer\\Facades\\LaravelMailOptimizer"
-            }
+            ]
         }
     }
 }
