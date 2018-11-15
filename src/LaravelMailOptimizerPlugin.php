@@ -23,18 +23,37 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
     protected $css;
 
     /**
+     * @var string
+     */
+    protected $html_minifier_enabled;
+
+    /**
+     * @var string
+     */
+    protected $css_inliner_enabled;
+
+
+    /**
+     * @var array
+     */
+    protected $options;
+
+
+
+    /**
      * @param array $options options defined in the configuration file.
      */
     public function __construct(array $options)
     {
         $this->converter = new CssToInlineStyles();
         $this->minifier = new HtmlMin();
-        $this->loadOptions($options);
+        $this->options = $this->loadOptions($options);
     }
 
     public function applyOptimizers(string $html, string $css)
     {
-      return (string) $this->minifier->minify($this->converter->convert($body, $this->css))
+
+      return (string) $this->minifier->minify($this->converter->convert($html, $css));
     }
 
     /**
@@ -80,6 +99,10 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
                 $this->css .= file_get_contents($file);
             }
         }
+
+        if(isset($options['html_minifier_enabled']) && !empty($options['html_minifier_enabled'])){
+          $this->html_minifier_enabled = (isset($options['html_minifier_enabled']) && is_bool($options['html_minifier_enabled'])) ? $options['html_minifier_enabled'] : true;
+        }
     }
 
     /**
@@ -112,7 +135,7 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
             } while ($link_tags->length > 0);
             if (isset($options)) {
                 // reload the options
-                $this->loadOptions($options);
+                $this->options;
             }
 
             return $dom->saveHTML();
