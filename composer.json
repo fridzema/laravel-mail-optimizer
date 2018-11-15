@@ -1,6 +1,6 @@
 {
     "name": "fridzema/laravel-mail-optimizer",
-    "description": ":description",
+    "description": "Inlines css and minifies html in Laravel mails",
     "license": "MIT",
     "authors": [
         {

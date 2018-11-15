@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/fridzema/laravel-mail-optimizer/v/stable)](https://packagist.org/packages/fridzema/laravel-mail-optimizer)
 [![License](https://poser.pugx.org/fridzema/laravel-mail-optimizer/license)](https://packagist.org/packages/fridzema/laravel-mail-optimizer)
 
-Laravel mail optimizer injects your css to emails, after this it will be minified.
+Inlines css and minifies html in Laravel mails.
 
 ## Installation
 
@@ -15,7 +15,10 @@ $ composer require fridzema/laravel-mail-optimizer
 ```
 
 ## Usage
-...
+Publish config
+```
+php artisan vendor:publish --provider='Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider'
+```
 
 
 ## Change log
