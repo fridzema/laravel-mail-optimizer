@@ -7,11 +7,11 @@
 Inlines css and minifies html in Laravel mails.
 
 ## Roadmap
-Load css from url/cdn
-Disable / Enable optimizations
-Check some html mail standards
-Cache mail views
-Debug function
+- Load css from url/cdn
+- Disable / Enable optimizations
+- Check some html mail standards
+- Cache mail views
+- Debug function
 
 ## Installation
 
