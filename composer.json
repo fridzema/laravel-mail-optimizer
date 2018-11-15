@@ -1,7 +1,7 @@
 {
     "name": "fridzema/laravel-mail-optimizer",
     "description": ":description",
-    "license": "license",
+    "license": "MIT",
     "authors": [
         {
             "name": "Robert Fridzema",
