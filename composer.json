@@ -1,0 +1,38 @@
+{
+    "name": "fridzema/laravel-mail-optimizer",
+    "description": ":description",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Robert Fridzema",
+            "email": "fridzema@gmail.com",
+            "homepage": "https://fridzema.com"
+        }
+    ],
+    "homepage": "https://github.com/fridzema/laravel-mail-optimizer",
+    "keywords": ["Laravel", "LaravelMailOptimizer"],
+    "require": {
+        "illuminate/support": "~5",
+        "tijsverkoyen/css-to-inline-styles": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fridzema\\LaravelMailOptimizer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fridzema\\LaravelMailOptimizer\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fridzema\\LaravelMailOptimizer\\LaravelMailOptimizerServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMailOptimizer": "Fridzema\\LaravelMailOptimizer\\Facades\\LaravelMailOptimizer"
+            }
+        }
+    }
+}
