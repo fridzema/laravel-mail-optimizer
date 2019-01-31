@@ -1,5 +1,5 @@
 {
-    "name": "fridzema/laravel-mail-optimizer",
+    "name": "fridzel/laravel-mail-optimizer",
     "description": "Inlines css and minifies html in Laravel mails",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "homepage": "https://fridzema.com"
         }
     ],
-    "homepage": "https://github.com/fridzema/laravel-mail-optimizer",
+    "homepage": "https://github.com/fridzel/laravel-mail-optimizer",
     "keywords": ["Laravel", "LaravelMailOptimizer"],
     "require": {
         "illuminate/support": "~5",
@@ -18,13 +18,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Fridzema\\LaravelMailOptimizer\\": "src/"
+            "Fridzel\\LaravelMailOptimizer\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Fridzema\\LaravelMailOptimizer\\LaravelMailOptimizerServiceProvider"
+                "Fridzel\\LaravelMailOptimizer\\LaravelMailOptimizerServiceProvider"
             ]
         }
     }
