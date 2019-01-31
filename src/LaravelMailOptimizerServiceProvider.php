@@ -1,6 +1,6 @@
 <?php
 
-namespace Fridzema\LaravelMailOptimizer;
+namespace Fridzel\LaravelMailOptimizer;
 
 use Swift_Mailer;
 use Illuminate\Support\ServiceProvider;
