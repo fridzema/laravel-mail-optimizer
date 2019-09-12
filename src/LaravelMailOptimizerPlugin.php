@@ -30,7 +30,7 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
     public function __construct(array $options)
     {
         $this->converter = new CssToInlineStyles();
-        $this->minifier = new HtmlMinInterface();
+        $this->minifier = new HtmlMin();
         $this->options = $this->loadOptions($options);
     }
 
