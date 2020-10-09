@@ -10,7 +10,7 @@
 	"homepage": "https://github.com/fridzel/laravel-mail-optimizer",
 	"keywords": ["Laravel", "LaravelMailOptimizer"],
 	"require": {
-		"illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0|^7.0",
+		"illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0|^7.0|^8.0",
 		"tijsverkoyen/css-to-inline-styles": "~2.0",
 		"voku/html-min": "^4.0"
 	},
