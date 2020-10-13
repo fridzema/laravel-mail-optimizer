@@ -22,8 +22,6 @@ class LaravelMailOptimizerPlugin implements \Swift_Events_SendListener
      */
     protected $options;
 
-
-
     /**
      * @param array $options options defined in the configuration file.
      */
