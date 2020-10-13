@@ -27,21 +27,16 @@ Publish config
 php artisan vendor:publish --provider='Fridzema\LaravelMailOptimizer\LaravelMailOptimizerServiceProvider'
 ```
 
-
 ## Change log
-
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
 ## Contributing
-
 Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
-
 If you discover any security related issues, please email fridzema@gmail.com instead of using the issue tracker.
 
 ## Credits
-
 - [Robert Fridzema][link-author]
 - [All Contributors][link-contributors]
 
@@ -49,7 +44,6 @@ If you discover any security related issues, please email fridzema@gmail.com ins
 This package is greatly inspired, and mostly copied, from [laravel-mail-css-inliner](https://github.com/fedeisas/laravel-mail-css-inliner). Because laravel-mail-css-inliner seems abonded i created this package with a few extra features.
 
 ## License
-
 license. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/fridzema/laravelmailoptimizer.svg?style=flat-square
